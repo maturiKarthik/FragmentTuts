@@ -57,8 +57,8 @@ FRAGEMNT TUTS + RULES :
                 
                 
                 
-     ALERT_DIALOG_TUTS:
-     -------------------
+  ALERT_DIALOG_TUTS:
+  -------------------
      
      1.) The alert dialog will only work in the class which extends the Activity.
         (i,e) it will not work if the class doen't extend the Activity.
