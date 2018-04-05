@@ -52,13 +52,16 @@ CODE SNIPPET TO ADD LIST_VIEW IN FRAGMENT CLASS:
     View view;
 
 @Nullable
-    @Override
+@Override
+    
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
 
          view = inflater.inflate(R.layout.display,container,false);
 
         listView = (ListView) view.findViewById(R.id.show_data);
+        
+        // THIS CODE BELONGS TO SUGAR ORM .. SEE MY PROJECT ON SUGAR ORM
         List<Client> data = Client.listAll(Client.class);
         ArrayList<String> data_retrived = new ArrayList<>();
 
