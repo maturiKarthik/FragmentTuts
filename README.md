@@ -44,6 +44,36 @@ FRAGEMNT TUTS + RULES :
 }
 
 
+CODE SNIPPET TO ADD LIST_VIEW IN FRAGMENT CLASS:
+*************************************************
+
+
+ ListView listView;
+    View view;
+
+@Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
+
+         view = inflater.inflate(R.layout.display,container,false);
+
+        listView = (ListView) view.findViewById(R.id.show_data);
+        List<Client> data = Client.listAll(Client.class);
+        ArrayList<String> data_retrived = new ArrayList<>();
+
+        for (Client client : data){
+            data_retrived.add(client.getId()+"=="+client.name+"=="+client.num+"=="+client.job);
+            Log.d("DATA",client.getId()+"=="+client.name+"=="+client.num+"=="+client.job);
+        }
+
+        //List view code 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(),android.R.layout.simple_expandable_list_item_1,data_retrived);
+        listView.setAdapter(adapter);
+        return view;
+    }
+
+
 4.) Now , we have to  use the Fragment Manager and Fragment Transction to toggle between Framgments.
    
    Code Snippet:
